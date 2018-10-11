@@ -14,6 +14,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <a href="home.jsp">Home</a>
+    <a href="cadastro_pessoas.jsp">Cadastro de Pessoas</a>
+    <a href="cadastro_empresas.jsp">Cadastro de Empresas</a>
+    <a href="cadastro_veiculos.jsp">Cadastro de Veiculos</a>
     
     <%int i = Integer.parseInt(request.getParameter("i"));%>
     <%Cadastro c = Bd_pessoas.getCadastros().get(i);%>

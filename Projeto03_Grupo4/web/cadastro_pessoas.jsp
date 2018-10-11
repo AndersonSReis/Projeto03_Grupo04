@@ -9,6 +9,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <a href="home.jsp">Home</a>    
+    <a href="cadastro_empresas.jsp">Cadastro de Empresas</a>
+    <a href="cadastro_veiculos.jsp">Cadastro de Veiculos</a>
     <body>
         <h1>Cadastrados</h1>
         <a href="novo_pessoas.jsp"><button>Registrar Pessoa</button></a>
@@ -20,6 +23,7 @@
                 <th>CPF</th>
                 <th>E-mail</th>
                 <th>Telefone</th>
+                <th>Alterações</th>
             </tr>
              
             <%for (Cadastro c: Bd_pessoas.getCadastros()){%>
