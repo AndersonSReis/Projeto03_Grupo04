@@ -1,0 +1,45 @@
+<%-- 
+    Document   : cadastro_pessoas
+    Created on : 07/10/2018, 21:57:24
+    Author     : MARIA
+--%>
+
+
+<%@page import="br.com.fatecpg.Cadastro"%>
+<%@page import="br.com.fatecpg.Bd_pessoas"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cadastro de Pessoas</title>
+    </head>
+    <body>
+        <a href="home.jsp">Home</a>&nbsp&nbsp
+        <a href="cadastro_empresas.jsp">Cadastro de Empresas</a>&nbsp&nbsp
+        <a href="cadastro_veiculos.jsp">Cadastro de Veiculos</a>
+        
+        <h1>Cadastro de Pessoas</h1>
+        <%if (request.getParameter("novoCadastro")!=null){
+            String nome = request.getParameter("nome");
+            String cpf=  request.getParameter("cpf");
+            String email= request.getParameter("email");
+            String telefone= request.getParameter("telefone");
+            Cadastro c = new Cadastro();
+            
+            c.setDado(nome, cpf, email, telefone);
+            Bd_pessoas.getCadastros().add(c);
+            response.sendRedirect("cadastro_pessoas.jsp");
+        }
+        %>
+        <form>
+            Nome:<br/><input type="text" name="nome"/><br/><br/>
+            CPF:<br/><input type="text" name="cpf"/><br/><br/>
+            E-mail:<br/><input type="text" name="email"/><br/><br/>
+            Telefone:<br/><input type="text" name="telefone"/><br/><br/>
+            <input type="submit" name="novoCadastro" value="Enviar">
+        </form>
+        
+    </body>
+    
+</html>
