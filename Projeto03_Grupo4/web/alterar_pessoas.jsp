@@ -5,8 +5,8 @@
 --%>
 
 
-<%@page import="br.com.fatecpg.Cadastro"%>
 <%@page import="br.com.fatecpg.Bd_pessoas"%>
+<%@page import="br.com.fatecpg.Cadastro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,13 +21,13 @@
     <body>
         <h1>Alterar</h1>
          <%
-        if (request.getParameter("anterarCadastro")!=null){
+        if (request.getParameter("alterarCadastro")!=null){
             c.setNome(request.getParameter("nome"));
-            c.setNome(request.getParameter("cpf"));
-            c.setNome(request.getParameter("email"));
-            c.setNome(request.getParameter("telefone"));
+            c.setCpf(request.getParameter("cpf"));
+            c.setEmail(request.getParameter("email"));
+            c.setTelefone(request.getParameter("telefone"));
             
-            Bd_pessoas.getCadastros().set(i,c);
+            Bd_pessoas.getCadastros().set(i, c);
             response.sendRedirect("cadastro_pessoas.jsp");
         }%>
         <form>
@@ -42,4 +42,5 @@
         </form>
     </body>
 </html>
+
 
